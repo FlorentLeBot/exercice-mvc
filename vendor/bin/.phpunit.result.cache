@@ -1,0 +1,1 @@
+{"version":1,"defects":{"LivreDBTest::testAjout":4,"AdresseDBTest::testAjout":5},"times":{"PersonneDBTest::testAjout":0.037,"LivreDBTest::testAjout":0.047,"AdresseDBTest::testAjout":0.434}}

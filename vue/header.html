@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>MVC-Reservation</title>
+<!--  style css du site -->
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<!--bibliotheque jquery  -->
+	<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<script language="javascript" type="text/javascript">	
+/*fonction permettant de creer les cookies*/
+function createCookie(name,value,days) {
+	if (days) {
+		var date = new Date();
+		date.setTime(date.getTime()+(days*24*60*60*1000));
+		var expires = "; expires="+date.toGMTString();
+	}
+	else var expires = "";
+	document.cookie = name+"="+value+expires+"; path=/";
+}
+/*fonction permettant de lire les cookies*/
+function readCookie(name) {
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) {
+		var c = ca[i];
+		while (c.charAt(0)==' ') c = c.substring(1,c.length);
+		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+	}
+	return null;
+}	
+/*fonction permettant de controler les caracteres du mot de passe et si les mot de passe sont identiques*/
+        function validate() { 
+            var msg; 
+			var msg2;
+            var str = document.getElementById("pwd").value; 
+			var str2 = document.getElementById("pwd2").value; 
+            if (str.match( /[0-9]/g) && 
+                    str.match( /[A-Z]/g) && 
+                    str.match(/[a-z]/g) && 
+                    str.match( /[^a-zA-Z\d]/g) &&
+                    str.length >= 10) {
+                msg = "<br><p style='color:green'>Mot de passe fort.</p>"; 
+			} else {
+                msg = "<br><p style='color:red'>Mot de passe faible.</p>"; 
+            }
+			document.getElementById("msg").innerHTML= msg; 
+			if(str!=str2){
+				msg2=" <p style='color:red'>Les Mots de passe sont différents !</p>";
+				document.getElementById("msg2").innerHTML= msg2; 
+				return false;
+			}
+			return true;
+
+        } 
+
+</script>
+
+
+</head>
+<body>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>MVC-Reservation</title>
+<!--  style css du site -->
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<!--bibliotheque jquery  -->
+	<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<script LANGUAGE="javascript">
+ $(document).ready(function() {
+  
+      $(".verif_form_livre").submit(function(){  
+
+
+  $.post($(this).attr("action"), $(this).serialize(), function(data){
+	  var $e = $("#messagee");
+      // traitement  exécuter une fois le formulaire posté.
+      //data est sous la forme: insert (voir verifController.php)
+      var ok=data.substr(0,6);
+      var token=data.substr(3,data.length);
+      if(ok=="insert"){
+     //TODO implementer le retour assynchrone de la validation du formulaire
+      }
+      else{
+  
+	 $e.text(data).show();
+  }
+  });
+  return false;
+
+ 
+});
+
+
+});
+
+</script> 
+</head>
+<body>

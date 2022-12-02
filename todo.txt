@@ -1,0 +1,10 @@
+-insertion classe metier livre,
+-implémenter:
+ - PDO livreDB ==> done
+ -classe de test sur LIvreDB
+ 
+ -le controller validLivreController pour ajout  objet livre
+Le formulaire de validation se fait avec ajax (comme pour l'authentification)
+-implementer headerLivre.html qui agit sur la validation du formulaire pour insérer le livre en BDD en asynchrone 
+-rendre responsive le menu -> https://getbootstrap.com/docs/4.3/components/navbar/
+-activer l'item du menu quand on est sur la page correspondante

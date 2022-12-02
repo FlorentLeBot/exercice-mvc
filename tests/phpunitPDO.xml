@@ -1,0 +1,14 @@
+<phpunit>
+<filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">PDO</directory>
+        </whitelist>
+    </filter>
+  <testsuites>
+    <testsuite name="PDO">
+      <file>PersonneDBTest.php</file>
+	   <file>AdresseDBTest.php</file>
+	    <file>LivreDBTest.php</file>
+    </testsuite>
+  </testsuites>
+</phpunit>
